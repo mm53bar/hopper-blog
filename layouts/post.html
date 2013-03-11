@@ -1,0 +1,22 @@
+<% render 'default' do %>
+<section class="content">
+  <h1>
+    <a href="<%= item[:url] %>"><%= item[:title] %></a>
+  </h1>
+
+  <section class="byline">
+    <%= attribute_to_time(item[:created_at]).strftime('%B %e, %Y') %>
+  </section>
+
+  <%= yield %>
+
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <p>
+        Bio goes here...
+      </p>
+    </section>
+  </section>
+</section>
+<% end %>

@@ -1,0 +1,13 @@
+---
+title: Posts
+---
+
+<section class="content">
+  <ul class="listing">
+<% @site.sorted_articles[0, 10].each do |article| %>
+    <li>
+      <span><%= attribute_to_time(article[:created_at]).strftime('%B %e, %Y') %></span> <%= link_to article[:title], article.path %></a>
+    </li>
+<% end %>
+  </ul>
+</section>
